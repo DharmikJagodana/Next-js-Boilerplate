@@ -28,6 +28,7 @@ export const POST = async (request: Request) => {
       return NextResponse.json(error.format(), { status: 422 });
     }
 
+    logger.error(error, 'An error occurred while creating a guestbook');
     return NextResponse.json({}, { status: 500 });
   }
 };
@@ -54,6 +55,7 @@ export const PUT = async (request: Request) => {
       return NextResponse.json(error.format(), { status: 422 });
     }
 
+    logger.error(error, 'An error occurred while updating a guestbook');
     return NextResponse.json({}, { status: 500 });
   }
 };
@@ -76,6 +78,7 @@ export const DELETE = async (request: Request) => {
       return NextResponse.json(error.format(), { status: 422 });
     }
 
+    logger.error(error, 'An error occurred while deleting a guestbook');
     return NextResponse.json({}, { status: 500 });
   }
 };
